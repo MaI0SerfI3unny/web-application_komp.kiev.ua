@@ -1,0 +1,136 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  width: 100%;
+  height: 100px;
+  background: url('https://komp.kiev.ua/wp-content/uploads/2015/02/slide2.jpg');
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width:1112px) {
+  header h5{
+    visibility: hidden;
+  }
+}
+
+header h5{
+  position: absolute;
+  padding-top: 1rem;
+  right: 6%;
+  float: right;
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.bg_logo{
+  float: left;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  width:520px;
+  background-color: white;
+}
+
+
+main{
+  width: 100%;
+  height: 700px;
+}
+
+@media (max-width:1200px) {
+  .button{
+    width: 100%;
+  }
+}
+
+.button{
+  border: 1px solid white;
+  background-color: #273484;
+  text-align: center;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 10px;
+  min-width: 360px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.button:hover{
+  background-color: #071b91;
+  border:1px solid black;
+}
+
+.office{
+  margin-top: 4%;
+  float: left;
+  width: 600px;
+  height: 300px;
+  background: url('../img/office.jpg');
+  background-size: 100% 100%;
+}
+
+.office h2{
+  font-weight: bold;
+  color: white;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+#Officeinput{
+  margin-top: 10px;
+  width: 30%;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  background: #17235e;
+}
+
+.secondWork{
+  border-radius: 10px;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.result{
+  border: 5px solid black;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 1.8%;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: white;
+  width: 50%;
+  height: 100px;
+  border-radius: 20px;
+  background-color:  #071b91;
+}
