@@ -1,11 +1,11 @@
 const result = document.getElementById('result');
 const button = document.querySelectorAll('.button');
-const inputs = document.querySelectorAll('.textview');
+const buttonplus = document.querySelectorAll('.buttonplus');
+const tehnic = document.querySelectorAll('.textview');
 const Officerange = document.getElementById('Officerange');
 const Officeinput = document.getElementById('Officeinput');
 const Inputs = document.querySelectorAll('input');
 const Total = document.getElementById('total-price');
-
 
 
 
@@ -16,6 +16,9 @@ const Work = document.querySelector('input[name="Work"]');
 const Domen = document.querySelector('input[name="Domen"]');
 const Strat = document.querySelector('input[name="Strat"]');
 const Analitic = document.querySelector('input[name="Analitic"]');
+const Filed = document.querySelector('input[name="Field1"]');
+const Filed2 = document.querySelector('input[name="Fiel2d"]');
+const Filed3 = document.querySelector('input[name="Fiel3d"]');
 
 
 
@@ -43,7 +46,14 @@ function calc(){
   const secondAnalitic = Analitic.checked ? parseFloat(Analitic.value) : 1;
   const secondDomen = Domen.checked ? parseFloat(Domen.value) : 1;
   const secondStrat = Strat.checked ? parseFloat(Strat.value) : 1;
+  const field1 = Filed.checked ? parseFloat(Filed.value) : 0;
+  const field2 = Filed2.checked ? parseFloat(Filed2.value) : 0;
+  const field3 = Filed3.checked ? parseFloat(Filed3.value) : 0;
 
+
+  console.log(field2);
+  console.log(field1);
+  console.log(field3);
   console.log(secondClean);
   console.log(secondWork);
   console.log(secondThink);
@@ -53,12 +63,12 @@ function calc(){
 
   //BASE PRICE AND ALL WITH PRICE
 
-  const base_price = 2000;
+  const base_price = parseInt(2000);
 
 
 
 
-  const TotalPrice = parseInt((((((((base_price + currentPrice1)*secondClean)*secondWork)*secondThink)*officenum)*secondAnalitic)*secondDomen)*secondStrat);
+  const TotalPrice = parseInt((((((((base_price + currentPrice1+field1+field2+field3)*secondClean)*secondWork)*secondThink)*officenum)*secondAnalitic)*secondDomen)*secondStrat);
 
   console.log(TotalPrice);
 
@@ -66,7 +76,7 @@ function calc(){
   Total.innerText = format.format(TotalPrice);
 }
 
-//
+// DB PRICE MODELS
 
 const models =[
   {
@@ -84,12 +94,7 @@ const models =[
   }
 ]
 
-const assignValue = () => {
-  inputs.value = inputs.value;
-}
-
-
-let currentPrice1 = models[0].price;
+let currentPrice1 = parseInt(models[0].price);
 
 
 for(let models of button){
@@ -105,17 +110,40 @@ const takeActiveBank= CurrentActive => {
   const CurrentBank = models.find( models => models.name == data );
   currentPrice1 =parseInt(CurrentBank.price);
   console.log(currentPrice1);
-}
+// DB PRICE TECNIC
 
-console.log(button);
+const technics =[
+  {
+    name:'server',
+    price:'200',
+  },
+  {
+    name:'mobile',
+    price: '300'
+  },
+  {
+    name: 'camera',
+    price: '500'
+  }
+]
 
+let currentPrice2 = technics[0].price;
+console.log(tehnic);
 
-for(let input of inputs){
-  input.addEventListener('input', () => {
-    console.log(inputs.value);
+for(let technics of tehnic){
+  technics.addEventListener('click', () => {
+    console.log(technics);
+    takeActiveBank2(technics);
   })
 }
 
-function insert(num) {
-  document.form.textview.value =  document.form.textview.value + num;
+const takeActiveBank2= CurrentActive2 => {
+  const data2 = CurrentActive2.dataset.name;
+  const dataprice2 = CurrentActive2.dataset.price;
+  const CurrentBank2 = technics.find( technics => technics.name == data2 );
+  currentPrice2 =parseInt(CurrentBank2.price);
+  console.log(currentPrice2);
 }
+}
+
+console.log(button);

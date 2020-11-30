@@ -42,16 +42,24 @@
 </div>
 </div>
 <br>
-<div class="text-center result">
-<span class="text-center"><span class="mr-1" id="total-price"></span>грн/месяц</span>
+<div class="row">
+<div class=" col-md-6 text-center result mr-3">
+<span class="text-center pr-4"><span class="mr-1" id="total-price"></span>грн/месяц</span>
 </div>
-<div class="float-right col-md-6 ml-3">
+<div class=" col-md-5 mt-4 ml-4 secondWork">
+  <h2 class="m-2 mb-4">ИТ-инфраструктура</h2>
+  <div>
+    <p class=""><input class="mr-1"  type="checkbox" name="Field1" value="200" />Серверы</p>
+  </div>
 
-<input class="" type="button" name="input" value="-" onclick="insert('-1')">
-<form class=""  name="form">
-  <input class="textview" type="number" min="0" max="999" name="textview" value="0">
-</form>
-<input class="" type="button" name="input+" value="+" onclick="insert('1')">
+  <div>
+    <p><input class="mr-1" type="checkbox" name="Fiel2d" value="300" />Мобильные устройства</p>
+  </div>
+
+  <div>
+    <p><input class="mr-1" type="checkbox" name="Fiel3d" value="500" />Видеонаблюдение</p>
+  </div>
+</div>
 </div>
 
 
